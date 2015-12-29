@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+    <title>Dungeon Architect User Guide</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../theme/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../theme/css/theme.css">
+  
+    <script src="../theme/js/jquery.min.js"></script>
+    <script src="../theme/js/bootstrap.min.js"></script>
+  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+
+<script>
+ $(document).ready(function () {
+	 $("#TOC").appendTo("#toc_host");
+	 $("#TOC").attr("data-spy", "affix");
+	 $("#TOC").attr("data-offset-top", "5");
+	$("#TOC").addClass("bs-sidebar");
+	$("#TOC").addClass("hidden-print");
+	 /*
+	*/
+        var url = window.location.href;
+        url = url.replace(window.location.hash, "");
+
+	    // Will only work if string in href matches with location
+        $('ul.nav a[href="' + url + '"]').parent().addClass('active');
+
+    // Will also work for relative and absolute hrefs
+        $('ul.nav a').filter(function () {
+            return this.href == url;
+        }).parent().addClass('active').parent().parent().addClass('active');
+
+    });
+
+// Smooth scroll
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 500);
+        return false;
+      }
+    }
+  });
+});
+
+</script>
+
+<script>
+
+
+$( document ).ready(function() {
+	$('img.svg').each(function(){
+		var $img = jQuery(this);
+		var imgID = $img.attr('id');
+		var imgClass = $img.attr('class');
+		var imgURL = $img.attr('src');
+
+		jQuery.get(imgURL, function(data) {
+                // Get the SVG tag, ignore the rest
+                var $svg = jQuery(data).find('svg');
+
+                // Add replaced image's ID to the new SVG
+                if(typeof imgID !== 'undefined') {
+                	$svg = $svg.attr('id', imgID);
+                }
+                // Add replaced image's classes to the new SVG
+                if(typeof imgClass !== 'undefined') {
+                	$svg = $svg.attr('class', imgClass+' replaced-svg');
+                }
+
+                // Remove any invalid XML tags as per http://validator.w3.org
+                $svg = $svg.removeAttr('xmlns:a');
+
+                // Replace image with new SVG
+                $img.replaceWith($svg);
+
+            }, 'xml');
+
+	});
+});
+ </script>
+
+<div id="wrap">
+
+  	<div class="container">
+<script>
+$(document).ready(function() {
+	$('#TOC ul').each(function() {
+		$(this).addClass("nav");
+
+	});
+
+	$('#TOC').children('ul').each(function() {
+		$(this).addClass("bs-sidenav");
+	});
+
+  $('a[href="#TOC"]').each(function() {
+    $(this).after($(this).text());
+    $(this).remove();
+  })
+
+
+	$('.documentationBlock img').each(function() {
+
+		$(this).addClass("width: 100%");
+		$(this).addClass("height:100%");
+		$(this).addClass('img-responsive');
+
+	});
+	$('body').scrollspy({ target: '#TOC' })
+
+	$('img').on('load', function(e) {
+    	$('body').scrollspy('refresh');
+    });
+
+});
+</script>
+
+<div class="row documentationBlock">
+		<div class="col-md-3" id="toc_host">
+
+		</div>
+		<div class="col-md-9" style="font-family: 'Open Sans', sans-serif;">
+<div class="branding-logo">
+	<img src="../assets/images/unity_logo.png">
+</div>
+			<div class="version-block">
+			  <div class="dropdown" style="display: inline">
+			    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Version
+			    <span class="caret"></span></button>
+			    <ul class="dropdown-menu">
+			    				<li><a href="quick_start_1.0.0.html">1.0.0</a></li>
+			    </ul>
+			  </div>
+			  <div class="version-number">1.0.0</div>
+			</div>
+			<div class="doc-title">Dungeon Architect Quick Start Guide (Unity)</div>
+<div id="TOC">
+<ul>
+<li><a href="#sample-content">Sample Content</a></li>
+<li><a href="#candy-theme">Candy Theme</a><ul>
+<li><a href="#design-time-generation">Design Time Generation</a></li>
+<li><a href="#runtime-generation">Runtime Generation</a></li>
+</ul></li>
+<li><a href="#simple-shapes-theme">Simple Shapes Theme</a></li>
+<li><a href="#moba-theme-mk4">MOBA Theme (MK4)</a></li>
+<li><a href="#interiors-theme-mk4">Interiors Theme (MK4)</a><ul>
+<li><a href="#wooden-theme">Wooden Theme</a></li>
+<li><a href="#stone-theme">Stone Theme</a></li>
+<li><a href="#mixed-theme">Mixed Theme</a></li>
+</ul></li>
+<li><a href="#tad-sewer-3dforge">TaD Sewer (3DForge)</a></li>
+<li><a href="#multistory-dungeon-ms">MultiStory Dungeon (MS)</a></li>
+<li><a href="#topdown-dungeon-mk4">TopDown Dungeon (MK4)</a></li>
+</ul>
+</div>
+<h1 id="sample-content">Sample Content</h1>
+<p>Dungeon Architect comes with sample content to quickly get you started. It contain free modular assets (Candy) and pre-designed theme files for some of the famous modular assets in the asset store</p>
+<h1 id="candy-theme">Candy Theme</h1>
+<p>Dungeon Architect ships with a set of free modular assets to help you get started.</p>
+<div class="figure">
+<img src="../assets/images/candy_01.jpg" alt="Level generated using the Candy Theme" />
+<p class="caption">Level generated using the Candy Theme</p>
+</div>
+<p>Explore the contents under <code>DA_Samples/Theme_Candy/</code></p>
+<p>The theme file used to generate the level is located here:</p>
+<p><code>DA_Samples/Theme_Candy/Themes/SimpleDungeon.asset</code></p>
+<div class="figure">
+<img src="../assets/images/candy_theme.png" alt="Free Candy Theme" />
+<p class="caption">Free Candy Theme</p>
+</div>
+<h2 id="design-time-generation">Design Time Generation</h2>
+<p>This scene has a dungeon actor setup with the Candy theme.</p>
+<p>Select the DungeonGrid actor and click “Build Dungeon” button. Change the <strong>Seed</strong> variable in the configuration to get a different layout</p>
+<p>Scene Location: <code>DA_Samples/Theme_Candy/Scenes/DemoScene</code></p>
+<h2 id="runtime-generation">Runtime Generation</h2>
+<p>This demo shows how you can build a new layout at runtime. Play the scene and use the following controls</p>
+<ul>
+<li><strong>Space</strong>: Build a new dungeon layout</li>
+<li><strong>Right Mouse</strong>: Look Around</li>
+<li><strong>WASD</strong>: Move the camera</li>
+</ul>
+<p>Scene Location: <code>DA_Samples/Theme_Candy/Scenes/RuntimeGeneration</code></p>
+<h1 id="simple-shapes-theme">Simple Shapes Theme</h1>
+<p>Another example of a theme generated using simple basic shapes</p>
+<p>Explore the contents under <code>DA_Samples/Theme_SimpleShapes/</code></p>
+<p>Scene Location: <code>DA_Samples/Theme_SimpleShapes/Scenes/BasicShapesDemo</code></p>
+<div class="figure">
+<img src="../assets/images/simple_shapes_01.jpg" alt="Simple Shapes Scene" />
+<p class="caption">Simple Shapes Scene</p>
+</div>
+<div class="figure">
+<img src="../assets/images/simple_shapes_01_theme.png" alt="Theme File" />
+<p class="caption">Theme File</p>
+</div>
+<h1 id="moba-theme-mk4">MOBA Theme (MK4)</h1>
+<p>A theme created using ManufacturaK4’s excellent <a href="https://www.assetstore.unity3d.com/en/#!/content/28234">Tower Defense and MOBA</a> asset pack</p>
+<ul>
+<li>Import the <a href="https://www.assetstore.unity3d.com/en/#!/content/28234">Tower Defense and MOBA</a> asset pack into your project before opening the demo scenes</li>
+<li>Explore the contents under <code>DA_Samples/Theme_K4Moba/</code></li>
+<li>Scene Location: <code>DA_Samples/Theme_K4Moba/Scenes/Demo_MOBA_DA</code></li>
+</ul>
+<div class="figure">
+<img src="../assets/images/moba_01.jpg" alt="ManufacturaK4’s Moba Scene" />
+<p class="caption">ManufacturaK4’s Moba Scene</p>
+</div>
+<div class="figure">
+<img src="../assets/images/moba_02.jpg" alt="ManufacturaK4’s Moba Scene" />
+<p class="caption">ManufacturaK4’s Moba Scene</p>
+</div>
+<div class="figure">
+<img src="../assets/images/moba_03.jpg" alt="ManufacturaK4’s Moba Scene" />
+<p class="caption">ManufacturaK4’s Moba Scene</p>
+</div>
+<div class="figure">
+<img src="../assets/images/moba_theme.png" alt="Theme File Fragment" />
+<p class="caption">Theme File Fragment</p>
+</div>
+<h1 id="interiors-theme-mk4">Interiors Theme (MK4)</h1>
+<p>A theme created using ManufacturaK4’s excellent <a href="https://www.assetstore.unity3d.com/en/#!/content/18139">Top-Down Interiors</a> asset pack</p>
+<ul>
+<li>Import the <a href="https://www.assetstore.unity3d.com/en/#!/content/18139">Top-Down Interiors</a> asset pack into your project before opening the demo scenes</li>
+<li>Explore the contents under <code>DA_Samples/Theme_K4Interiors/</code></li>
+</ul>
+<h2 id="wooden-theme">Wooden Theme</h2>
+<p>Scene Location: <code>DA_Samples/Theme_K4Interiors/Scenes/01_PalaceWood</code></p>
+<div class="figure">
+<img src="../assets/images/interior_wood_01.jpg" alt="Wooden Theme" />
+<p class="caption">Wooden Theme</p>
+</div>
+<div class="figure">
+<img src="../assets/images/interior_wood_02.jpg" alt="Wooden Theme" />
+<p class="caption">Wooden Theme</p>
+</div>
+<div class="figure">
+<img src="../assets/images/interior_wood_theme.png" alt="Theme File" />
+<p class="caption">Theme File</p>
+</div>
+<h2 id="stone-theme">Stone Theme</h2>
+<p>Scene Location: <code>DA_Samples/Theme_K4Interiors/Scenes/02_PalaceStone</code></p>
+<div class="figure">
+<img src="../assets/images/interior_stone_01.jpg" alt="Stone Theme" />
+<p class="caption">Stone Theme</p>
+</div>
+<div class="figure">
+<img src="../assets/images/interior_stone_theme.png" alt="Theme File" />
+<p class="caption">Theme File</p>
+</div>
+<h2 id="mixed-theme">Mixed Theme</h2>
+<p>This sample shows how you can mix two different themes using a <em>Theme Override Volume</em></p>
+<div class="figure">
+<img src="../assets/images/interior_mixed_01.jpg" alt="Multiple Themes" />
+<p class="caption">Multiple Themes</p>
+</div>
+<h1 id="tad-sewer-3dforge">TaD Sewer (3DForge)</h1>
+<p>A theme created using 3DForge’s excellent <a href="https://www.assetstore.unity3d.com/en/#!/content/12867">TaD Sewer Kit</a> asset pack</p>
+<ul>
+<li>Import the <a href="https://www.assetstore.unity3d.com/en/#!/content/12867">TaD Sewer Kit</a> asset pack into your project before opening the demo scenes</li>
+<li>Explore the contents under <code>DA_Samples/Theme_TaD_Sewer/</code></li>
+<li>Scene Location: <code>DA_Samples/Theme_TaD_Sewer/Scenes/SewerScene</code></li>
+</ul>
+<p><img src="../assets/images/sewer_01.jpg" alt="TaD Sewer Scene" /> <img src="../assets/images/sewer_02.jpg" alt="TaD Sewer Scene" /></p>
+<div class="figure">
+<img src="../assets/images/sewer_theme.png" alt="Theme File" />
+<p class="caption">Theme File</p>
+</div>
+<h1 id="multistory-dungeon-ms">MultiStory Dungeon (MS)</h1>
+<p>A theme created using Mana Stations’s excellent <a href="https://www.assetstore.unity3d.com/en/#!/content/33955">Multistory Dungeons</a> asset pack</p>
+<ul>
+<li>Import the <a href="https://www.assetstore.unity3d.com/en/#!/content/33955">Multistory Dungeons</a> asset pack into your project before opening the demo scenes</li>
+<li>Explore the contents under <code>DA_Samples/Theme_MS_MultistoryDungeon/</code></li>
+<li>Scene Location: <code>DA_Samples/Theme_MS_MultistoryDungeon/Scenes/Demo_DungeonArch</code></li>
+</ul>
+<p><img src="../assets/images/ms_01.jpg" alt="Mana Station’s MultiStory Dungeons Scene" /> <img src="../assets/images/ms_02.jpg" alt="Mana Station’s MultiStory Dungeons Scene" /> <img src="../assets/images/ms_03.jpg" alt="Mana Station’s MultiStory Dungeons Scene" /></p>
+<div class="figure">
+<img src="../assets/images/ms_theme.png" alt="Theme file" />
+<p class="caption">Theme file</p>
+</div>
+<h1 id="topdown-dungeon-mk4">TopDown Dungeon (MK4)</h1>
+<p>A theme created using ManufacturaK4’s excellent <a href="https://www.assetstore.unity3d.com/en/#!/content/8000">Top-Down Dungeons Mobile</a> asset pack</p>
+<ul>
+<li>Import the <a href="https://www.assetstore.unity3d.com/en/#!/content/8000">Top-Down Dungeons Mobile</a> asset pack into your project before opening the demo scenes</li>
+<li>Explore the contents under <code>DA_Samples/Theme_K4TopDownDungeons/</code></li>
+<li>Scene Location: <code>DA_Samples/Theme_K4TopDownDungeons/Scenes/K4DungeonDemo</code></li>
+</ul>
+<p><img src="../assets/images/tdd_01.jpg" alt="ManufacturaK4’s Top-Down Dungeons Scene" /> <img src="../assets/images/tdd_02.jpg" alt="ManufacturaK4’s Top-Down Dungeons Scene" /></p>
+<div class="figure">
+<img src="../assets/images/tdd_theme.png" alt="Theme file" />
+<p class="caption">Theme file</p>
+</div>
+<div id="footer">
+  &copy; 2015 <a href="http://coderespawn.com/">Code Respawn Technologies Pvt Ltd</a>
+</div>
+
+</div>
+
+</div>
+</body>
+</html>
