@@ -63,11 +63,11 @@ A theme created using ManufacturaK4's excellent [Tower Defense and MOBA](https:/
 * Scene Location: `DA_Samples/Theme_K4Moba/Scenes/Demo_MOBA_DA`
 
 
-![ManufacturaK4's Moba Scene](../assets/images/moba_01.jpg)
+![ManufacturaK4's Moba Scene (Content Not included)](../assets/images/moba_01.jpg)
 
-![ManufacturaK4's Moba Scene](../assets/images/moba_02.jpg)
+![ManufacturaK4's Moba Scene (Content Not included)](../assets/images/moba_02.jpg)
 
-![ManufacturaK4's Moba Scene](../assets/images/moba_03.jpg)
+![ManufacturaK4's Moba Scene (Content Not included)](../assets/images/moba_03.jpg)
 
 ![Theme File Fragment](../assets/images/moba_theme.png)
 
@@ -83,9 +83,9 @@ Wooden Theme
 ------------
 Scene Location: `DA_Samples/Theme_K4Interiors/Scenes/01_PalaceWood`
 
-![Wooden Theme](../assets/images/interior_wood_01.jpg)
+![Wooden Theme (Content Not included)](../assets/images/interior_wood_01.jpg)
 
-![Wooden Theme](../assets/images/interior_wood_02.jpg)
+![Wooden Theme (Content Not included)](../assets/images/interior_wood_02.jpg)
 
 ![Theme File](../assets/images/interior_wood_theme.png)
 
@@ -93,7 +93,7 @@ Stone Theme
 -----------
 Scene Location: `DA_Samples/Theme_K4Interiors/Scenes/02_PalaceStone`
 
-![Stone Theme](../assets/images/interior_stone_01.jpg)
+![Stone Theme (Content Not included)](../assets/images/interior_stone_01.jpg)
 
 ![Theme File](../assets/images/interior_stone_theme.png)
 
@@ -101,7 +101,7 @@ Mixed Theme
 -----------
 This sample shows how you can mix two different themes using a *Theme Override Volume*
 
-![Multiple Themes](../assets/images/interior_mixed_01.jpg)
+![Multiple Themes (Content Not included)](../assets/images/interior_mixed_01.jpg)
 
 
 TaD Sewer (3DForge)
@@ -113,8 +113,9 @@ A theme created using 3DForge's excellent [TaD Sewer Kit](https://www.assetstore
 * Scene Location: `DA_Samples/Theme_TaD_Sewer/Scenes/SewerScene`
 
 
-![TaD Sewer Scene](../assets/images/sewer_01.jpg)
-![TaD Sewer Scene](../assets/images/sewer_02.jpg)
+![TaD Sewer Scene (Content Not included)](../assets/images/sewer_01.jpg)
+
+![TaD Sewer Scene (Content Not included)](../assets/images/sewer_02.jpg)
 
 ![Theme File](../assets/images/sewer_theme.png)
 
@@ -128,9 +129,11 @@ A theme created using Mana Stations's excellent [Multistory Dungeons](https://ww
 * Scene Location: `DA_Samples/Theme_MS_MultistoryDungeon/Scenes/Demo_DungeonArch`
 
 
-![Mana Station's MultiStory Dungeons Scene](../assets/images/ms_01.jpg)
-![Mana Station's MultiStory Dungeons Scene](../assets/images/ms_02.jpg)
-![Mana Station's MultiStory Dungeons Scene](../assets/images/ms_03.jpg)
+![Mana Station's MultiStory Dungeons Scene (Content Not included)](../assets/images/ms_01.jpg)
+
+![Mana Station's MultiStory Dungeons Scene (Content Not included)](../assets/images/ms_02.jpg)
+
+![Mana Station's MultiStory Dungeons Scene (Content Not included)](../assets/images/ms_03.jpg)
 
 ![Theme file](../assets/images/ms_theme.png)
 
@@ -144,8 +147,9 @@ A theme created using ManufacturaK4's excellent [Top-Down Dungeons Mobile](https
 * Scene Location: `DA_Samples/Theme_K4TopDownDungeons/Scenes/K4DungeonDemo`
 
 
-![ManufacturaK4's Top-Down Dungeons Scene](../assets/images/tdd_01.jpg)
-![ManufacturaK4's Top-Down Dungeons Scene](../assets/images/tdd_02.jpg)
+![ManufacturaK4's Top-Down Dungeons Scene (Content Not included)](../assets/images/tdd_01.jpg)
+
+![ManufacturaK4's Top-Down Dungeons Scene (Content Not included)](../assets/images/tdd_02.jpg)
 
 ![Theme file](../assets/images/tdd_theme.png)
 
