@@ -4,9 +4,9 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <title></title>
+  <meta name="author" content="for Unity 5" />
+  <title>Dungeon Architect Quick Start Demos</title>
   <style type="text/css">code{white-space: pre;}</style>
-    <title>Dungeon Architect User Guide</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../theme/css/bootstrap.min.css">
@@ -14,19 +14,33 @@
   
     <script src="../theme/js/jquery.min.js"></script>
     <script src="../theme/js/bootstrap.min.js"></script>
-  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
+<script>
+
+function getPdfUrl() {
+	return "../pdf/quick_start_1.0.0.pdf";
+}
+
+</script>
+
+  <link rel="stylesheet" href="../theme/highlight/styles/tomorrow.css">
+  <script src="../theme/highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 
 <script>
  $(document).ready(function () {
-	 $("#TOC").appendTo("#toc_host");
+	 $("#TOC").prependTo("#toc_host");
 	 $("#TOC").attr("data-spy", "affix");
 	 $("#TOC").attr("data-offset-top", "5");
 	$("#TOC").addClass("bs-sidebar");
 	$("#TOC").addClass("hidden-print");
+	
+	 $("#download_pdf").appendTo("#TOC");
+	
 	 /*
 	*/
         var url = window.location.href;
@@ -64,6 +78,7 @@ $(function() {
 
 
 $( document ).ready(function() {
+
 	$('img.svg').each(function(){
 		var $img = jQuery(this);
 		var imgID = $img.attr('id');
@@ -129,11 +144,12 @@ $(document).ready(function() {
     });
 
 });
+
 </script>
 
 <div class="row documentationBlock">
 		<div class="col-md-3" id="toc_host">
-
+			<div id="download_pdf"><a href="javascript:document.location.href=getPdfUrl();" target="_blank"><i class="fa fa-file-pdf-o"></i> Download PDF</a></div>
 		</div>
 		<div class="col-md-9" style="font-family: 'Open Sans', sans-serif;">
 <div class="branding-logo">
@@ -149,7 +165,10 @@ $(document).ready(function() {
 			  </div>
 			  <div class="version-number">1.0.0</div>
 			</div>
-			<div class="doc-title">Dungeon Architect Quick Start Guide (Unity)</div>
+<div id="header">
+<h1 class="title">Dungeon Architect Quick Start Demos</h1>
+<h2 class="author">for Unity 5</h2>
+</div>
 <div id="TOC">
 <ul>
 <li><a href="#sample-content">Sample Content</a></li>
@@ -177,9 +196,9 @@ $(document).ready(function() {
 <img src="../assets/images/candy_01.jpg" alt="Level generated using the Candy Theme" />
 <p class="caption">Level generated using the Candy Theme</p>
 </div>
-<p>Explore the contents under <code>DA_Samples/Theme_Candy/</code></p>
+<p>Explore the contents under <code>DungeonArchitect_Samples/Theme_Candy/</code></p>
 <p>The theme file used to generate the level is located here:</p>
-<p><code>DA_Samples/Theme_Candy/Themes/SimpleDungeon.asset</code></p>
+<p><code>DungeonArchitect_Samples/Theme_Candy/Themes/CandyDungeonTheme.asset</code></p>
 <div class="figure">
 <img src="../assets/images/candy_theme.png" alt="Free Candy Theme" />
 <p class="caption">Free Candy Theme</p>
@@ -187,7 +206,8 @@ $(document).ready(function() {
 <h2 id="design-time-generation">Design Time Generation</h2>
 <p>This scene has a dungeon actor setup with the Candy theme.</p>
 <p>Select the DungeonGrid actor and click “Build Dungeon” button. Change the <strong>Seed</strong> variable in the configuration to get a different layout</p>
-<p>Scene Location: <code>DA_Samples/Theme_Candy/Scenes/DemoScene</code></p>
+<p>Scene Location: <code>DungeonArchitect_Samples/Theme_Candy/Scenes/DemoScene</code></p>
+
 <h2 id="runtime-generation">Runtime Generation</h2>
 <p>This demo shows how you can build a new layout at runtime. Play the scene and use the following controls</p>
 <ul>
@@ -195,11 +215,12 @@ $(document).ready(function() {
 <li><strong>Right Mouse</strong>: Look Around</li>
 <li><strong>WASD</strong>: Move the camera</li>
 </ul>
-<p>Scene Location: <code>DA_Samples/Theme_Candy/Scenes/RuntimeGeneration</code></p>
+<p>Scene Location: <code>DungeonArchitect_Samples/Theme_Candy/Scenes/RuntimeGeneration</code></p>
+
 <h1 id="simple-shapes-theme">Simple Shapes Theme</h1>
 <p>Another example of a theme generated using simple basic shapes</p>
-<p>Explore the contents under <code>DA_Samples/Theme_SimpleShapes/</code></p>
-<p>Scene Location: <code>DA_Samples/Theme_SimpleShapes/Scenes/BasicShapesDemo</code></p>
+<p>Explore the contents under <code>DungeonArchitect_Samples/Theme_SimpleShapes/</code></p>
+<p>Scene Location: <code>DungeonArchitect_Samples/Theme_SimpleShapes/Scenes/BasicShapesDemo</code></p>
 <div class="figure">
 <img src="../assets/images/simple_shapes_01.jpg" alt="Simple Shapes Scene" />
 <p class="caption">Simple Shapes Scene</p>
@@ -208,12 +229,13 @@ $(document).ready(function() {
 <img src="../assets/images/simple_shapes_01_theme.png" alt="Theme File" />
 <p class="caption">Theme File</p>
 </div>
+
 <h1 id="moba-theme-mk4">MOBA Theme (MK4)</h1>
-<p>A theme created using ManufacturaK4’s excellent <a href="https://www.assetstore.unity3d.com/en/#!/content/28234">Tower Defense and MOBA</a> asset pack</p>
+<p>A theme created using ManufacturaK4’s excellent <a href="https://www.assetstore.unity3d.com/en/#!/content/28234">Tower Defense and MOBA</a> asset pack I’ve designed a few themes around some paid art assets in the asset store.</p>
 <ul>
 <li>Import the <a href="https://www.assetstore.unity3d.com/en/#!/content/28234">Tower Defense and MOBA</a> asset pack into your project before opening the demo scenes</li>
-<li>Explore the contents under <code>DA_Samples/Theme_K4Moba/</code></li>
-<li>Scene Location: <code>DA_Samples/Theme_K4Moba/Scenes/Demo_MOBA_DA</code></li>
+<li><a href="http://coderespawn.github.io/dungeon-architect-quick-start-unity-thridparty/Builds/DungeonArchitect_Samples_Thridparty.zip">Download</a> the theme files from here and extract it into your project’s Asset folder</li>
+<li>Explore the contents under <code>DungeonArchitect_Samples_Thridparty/Demos/Theme_K4_Moba/</code></li>
 </ul>
 <div class="figure">
 <img src="../assets/images/moba_01.jpg" alt="ManufacturaK4’s Moba Scene (Content Not included)" />
@@ -231,14 +253,16 @@ $(document).ready(function() {
 <img src="../assets/images/moba_theme.png" alt="Theme File Fragment" />
 <p class="caption">Theme File Fragment</p>
 </div>
+
 <h1 id="interiors-theme-mk4">Interiors Theme (MK4)</h1>
 <p>A theme created using ManufacturaK4’s excellent <a href="https://www.assetstore.unity3d.com/en/#!/content/18139">Top-Down Interiors</a> asset pack</p>
 <ul>
 <li>Import the <a href="https://www.assetstore.unity3d.com/en/#!/content/18139">Top-Down Interiors</a> asset pack into your project before opening the demo scenes</li>
-<li>Explore the contents under <code>DA_Samples/Theme_K4Interiors/</code></li>
+<li><a href="http://coderespawn.github.io/dungeon-architect-quick-start-unity-thridparty/Builds/DungeonArchitect_Samples_Thridparty.zip">Download</a> the theme files from here and extract it into your project’s Asset folder</li>
+<li>Explore the contents under <code>DungeonArchitect_Samples_Thridparty/Demos/Theme_K4_Interiors/</code></li>
 </ul>
 <h2 id="wooden-theme">Wooden Theme</h2>
-<p>Scene Location: <code>DA_Samples/Theme_K4Interiors/Scenes/01_PalaceWood</code></p>
+<p>Scene Location: <code>DungeonArchitect_Samples_Thridparty/Demos/Theme_K4_Interiors/Scenes/01_PalaceWood</code></p>
 <div class="figure">
 <img src="../assets/images/interior_wood_01.jpg" alt="Wooden Theme (Content Not included)" />
 <p class="caption">Wooden Theme (Content Not included)</p>
@@ -251,8 +275,9 @@ $(document).ready(function() {
 <img src="../assets/images/interior_wood_theme.png" alt="Theme File" />
 <p class="caption">Theme File</p>
 </div>
+
 <h2 id="stone-theme">Stone Theme</h2>
-<p>Scene Location: <code>DA_Samples/Theme_K4Interiors/Scenes/02_PalaceStone</code></p>
+<p>Scene Location: <code>DungeonArchitect_Samples_Thridparty/Demos/Theme_K4_Interiors/Scenes/02_PalaceStone</code></p>
 <div class="figure">
 <img src="../assets/images/interior_stone_01.jpg" alt="Stone Theme (Content Not included)" />
 <p class="caption">Stone Theme (Content Not included)</p>
@@ -261,18 +286,21 @@ $(document).ready(function() {
 <img src="../assets/images/interior_stone_theme.png" alt="Theme File" />
 <p class="caption">Theme File</p>
 </div>
+
 <h2 id="mixed-theme">Mixed Theme</h2>
+<p>Scene Location: <code>DungeonArchitect_Samples_Thridparty/Demos/Theme_K4_Interiors/Scenes/03_StoneWood_Mixed</code></p>
 <p>This sample shows how you can mix two different themes using a <em>Theme Override Volume</em></p>
 <div class="figure">
 <img src="../assets/images/interior_mixed_01.jpg" alt="Multiple Themes (Content Not included)" />
 <p class="caption">Multiple Themes (Content Not included)</p>
 </div>
+
 <h1 id="tad-sewer-3dforge">TaD Sewer (3DForge)</h1>
 <p>A theme created using 3DForge’s excellent <a href="https://www.assetstore.unity3d.com/en/#!/content/12867">TaD Sewer Kit</a> asset pack</p>
 <ul>
 <li>Import the <a href="https://www.assetstore.unity3d.com/en/#!/content/12867">TaD Sewer Kit</a> asset pack into your project before opening the demo scenes</li>
-<li>Explore the contents under <code>DA_Samples/Theme_TaD_Sewer/</code></li>
-<li>Scene Location: <code>DA_Samples/Theme_TaD_Sewer/Scenes/SewerScene</code></li>
+<li><a href="http://coderespawn.github.io/dungeon-architect-quick-start-unity-thridparty/Builds/DungeonArchitect_Samples_Thridparty.zip">Download</a> the theme files from here and extract it into your project’s Asset folder</li>
+<li>Explore the contents under <code>DungeonArchitect_Samples_Thridparty/Demos/Theme_3DF_TaDSewer/</code></li>
 </ul>
 <div class="figure">
 <img src="../assets/images/sewer_01.jpg" alt="TaD Sewer Scene (Content Not included)" />
@@ -286,12 +314,13 @@ $(document).ready(function() {
 <img src="../assets/images/sewer_theme.png" alt="Theme File" />
 <p class="caption">Theme File</p>
 </div>
+
 <h1 id="multistory-dungeon-ms">MultiStory Dungeon (MS)</h1>
 <p>A theme created using Mana Stations’s excellent <a href="https://www.assetstore.unity3d.com/en/#!/content/33955">Multistory Dungeons</a> asset pack</p>
 <ul>
 <li>Import the <a href="https://www.assetstore.unity3d.com/en/#!/content/33955">Multistory Dungeons</a> asset pack into your project before opening the demo scenes</li>
-<li>Explore the contents under <code>DA_Samples/Theme_MS_MultistoryDungeon/</code></li>
-<li>Scene Location: <code>DA_Samples/Theme_MS_MultistoryDungeon/Scenes/Demo_DungeonArch</code></li>
+<li><a href="http://coderespawn.github.io/dungeon-architect-quick-start-unity-thridparty/Builds/DungeonArchitect_Samples_Thridparty.zip">Download</a> the theme files from here and extract it into your project’s Asset folder</li>
+<li>Explore the contents under <code>DungeonArchitect_Samples_Thridparty/Demos/Theme_MS_MultistoryDungeon/</code></li>
 </ul>
 <div class="figure">
 <img src="../assets/images/ms_01.jpg" alt="Mana Station’s MultiStory Dungeons Scene (Content Not included)" />
@@ -309,12 +338,13 @@ $(document).ready(function() {
 <img src="../assets/images/ms_theme.png" alt="Theme file" />
 <p class="caption">Theme file</p>
 </div>
+
 <h1 id="topdown-dungeon-mk4">TopDown Dungeon (MK4)</h1>
 <p>A theme created using ManufacturaK4’s excellent <a href="https://www.assetstore.unity3d.com/en/#!/content/8000">Top-Down Dungeons Mobile</a> asset pack</p>
 <ul>
 <li>Import the <a href="https://www.assetstore.unity3d.com/en/#!/content/8000">Top-Down Dungeons Mobile</a> asset pack into your project before opening the demo scenes</li>
-<li>Explore the contents under <code>DA_Samples/Theme_K4TopDownDungeons/</code></li>
-<li>Scene Location: <code>DA_Samples/Theme_K4TopDownDungeons/Scenes/K4DungeonDemo</code></li>
+<li><a href="http://coderespawn.github.io/dungeon-architect-quick-start-unity-thridparty/Builds/DungeonArchitect_Samples_Thridparty.zip">Download</a> the theme files from here and extract it into your project’s Asset folder</li>
+<li>Explore the contents under <code>DungeonArchitect_Samples_Thridparty/Demos/Theme_K4_TopDownDungeons/</code></li>
 </ul>
 <div class="figure">
 <img src="../assets/images/tdd_01.jpg" alt="ManufacturaK4’s Top-Down Dungeons Scene (Content Not included)" />
