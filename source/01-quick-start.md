@@ -1,3 +1,5 @@
+% Dungeon Architect Quick Start Demos
+% for Unity 5
 
 Sample Content
 ==============
@@ -9,11 +11,11 @@ Dungeon Architect ships with a set of free modular assets to help you get starte
 
 ![Level generated using the Candy Theme](../assets/images/candy_01.jpg)
 
-Explore the contents under `DA_Samples/Theme_Candy/`
+Explore the contents under `DungeonArchitect_Samples/Theme_Candy/`
 
 The theme file used to generate the level is located here:
 
-`DA_Samples/Theme_Candy/Themes/SimpleDungeon.asset`
+`DungeonArchitect_Samples/Theme_Candy/Themes/CandyDungeonTheme.asset`
 
 ![Free Candy Theme](../assets/images/candy_theme.png)
 
@@ -24,8 +26,9 @@ This scene has a dungeon actor setup with the Candy theme.
 
 Select the DungeonGrid actor and click "Build Dungeon" button.  Change the **Seed** variable in the configuration to get a different layout
 
-Scene Location: `DA_Samples/Theme_Candy/Scenes/DemoScene`
+Scene Location: `DungeonArchitect_Samples/Theme_Candy/Scenes/DemoScene`
 
+\newpage
 
 Runtime Generation
 ------------------
@@ -37,30 +40,32 @@ This demo shows how you can build a new layout at runtime.  Play the scene and u
 * **WASD**: Move the camera
 
 
-Scene Location: `DA_Samples/Theme_Candy/Scenes/RuntimeGeneration`
+Scene Location: `DungeonArchitect_Samples/Theme_Candy/Scenes/RuntimeGeneration`
 
-
+\newpage
 
 Simple Shapes Theme
 ===================
 Another example of a theme generated using simple basic shapes
 
-Explore the contents under `DA_Samples/Theme_SimpleShapes/`
+Explore the contents under `DungeonArchitect_Samples/Theme_SimpleShapes/`
 
-Scene Location: `DA_Samples/Theme_SimpleShapes/Scenes/BasicShapesDemo`
+Scene Location: `DungeonArchitect_Samples/Theme_SimpleShapes/Scenes/BasicShapesDemo`
 
 ![Simple Shapes Scene](../assets/images/simple_shapes_01.jpg)
 
 ![Theme File](../assets/images/simple_shapes_01_theme.png)
 
+\newpage
 
 MOBA Theme (MK4)
 ================
 A theme created using ManufacturaK4's excellent [Tower Defense and MOBA](https://www.assetstore.unity3d.com/en/#!/content/28234) asset pack
+I've designed a few themes around some paid art assets in the asset store.
 
 * Import the [Tower Defense and MOBA](https://www.assetstore.unity3d.com/en/#!/content/28234) asset pack into your project before opening the demo scenes
-* Explore the contents under `DA_Samples/Theme_K4Moba/`
-* Scene Location: `DA_Samples/Theme_K4Moba/Scenes/Demo_MOBA_DA`
+* [Download](http://coderespawn.github.io/dungeon-architect-quick-start-unity-thridparty/Builds/DungeonArchitect_Samples_Thridparty.zip) the theme files from here and extract it into your project's Asset folder
+* Explore the contents under `DungeonArchitect_Samples_Thridparty/Demos/Theme_K4_Moba/`
 
 
 ![ManufacturaK4's Moba Scene (Content Not included)](../assets/images/moba_01.jpg)
@@ -71,17 +76,19 @@ A theme created using ManufacturaK4's excellent [Tower Defense and MOBA](https:/
 
 ![Theme File Fragment](../assets/images/moba_theme.png)
 
+\newpage
 
 Interiors Theme (MK4)
 =====================
 A theme created using ManufacturaK4's excellent [Top-Down Interiors](https://www.assetstore.unity3d.com/en/#!/content/18139) asset pack
 
 * Import the [Top-Down Interiors](https://www.assetstore.unity3d.com/en/#!/content/18139) asset pack into your project before opening the demo scenes
-* Explore the contents under `DA_Samples/Theme_K4Interiors/`
+* [Download](http://coderespawn.github.io/dungeon-architect-quick-start-unity-thridparty/Builds/DungeonArchitect_Samples_Thridparty.zip) the theme files from here and extract it into your project's Asset folder
+* Explore the contents under `DungeonArchitect_Samples_Thridparty/Demos/Theme_K4_Interiors/`
 
 Wooden Theme
 ------------
-Scene Location: `DA_Samples/Theme_K4Interiors/Scenes/01_PalaceWood`
+Scene Location: `DungeonArchitect_Samples_Thridparty/Demos/Theme_K4_Interiors/Scenes/01_PalaceWood`
 
 ![Wooden Theme (Content Not included)](../assets/images/interior_wood_01.jpg)
 
@@ -89,28 +96,35 @@ Scene Location: `DA_Samples/Theme_K4Interiors/Scenes/01_PalaceWood`
 
 ![Theme File](../assets/images/interior_wood_theme.png)
 
+\newpage
+
 Stone Theme
 -----------
-Scene Location: `DA_Samples/Theme_K4Interiors/Scenes/02_PalaceStone`
+Scene Location: `DungeonArchitect_Samples_Thridparty/Demos/Theme_K4_Interiors/Scenes/02_PalaceStone`
 
 ![Stone Theme (Content Not included)](../assets/images/interior_stone_01.jpg)
 
 ![Theme File](../assets/images/interior_stone_theme.png)
 
+\newpage
+
 Mixed Theme
 -----------
+Scene Location: `DungeonArchitect_Samples_Thridparty/Demos/Theme_K4_Interiors/Scenes/03_StoneWood_Mixed`
+
 This sample shows how you can mix two different themes using a *Theme Override Volume*
 
 ![Multiple Themes (Content Not included)](../assets/images/interior_mixed_01.jpg)
 
+\newpage
 
 TaD Sewer (3DForge)
 ===================
 A theme created using 3DForge's excellent [TaD Sewer Kit](https://www.assetstore.unity3d.com/en/#!/content/12867) asset pack
 
 * Import the [TaD Sewer Kit](https://www.assetstore.unity3d.com/en/#!/content/12867) asset pack into your project before opening the demo scenes
-* Explore the contents under `DA_Samples/Theme_TaD_Sewer/`
-* Scene Location: `DA_Samples/Theme_TaD_Sewer/Scenes/SewerScene`
+* [Download](http://coderespawn.github.io/dungeon-architect-quick-start-unity-thridparty/Builds/DungeonArchitect_Samples_Thridparty.zip) the theme files from here and extract it into your project's Asset folder
+* Explore the contents under `DungeonArchitect_Samples_Thridparty/Demos/Theme_3DF_TaDSewer/`
 
 
 ![TaD Sewer Scene (Content Not included)](../assets/images/sewer_01.jpg)
@@ -119,14 +133,15 @@ A theme created using 3DForge's excellent [TaD Sewer Kit](https://www.assetstore
 
 ![Theme File](../assets/images/sewer_theme.png)
 
+\newpage
 
 MultiStory Dungeon (MS)
 ======================
 A theme created using Mana Stations's excellent [Multistory Dungeons](https://www.assetstore.unity3d.com/en/#!/content/33955) asset pack
 
 * Import the [Multistory Dungeons](https://www.assetstore.unity3d.com/en/#!/content/33955) asset pack into your project before opening the demo scenes
-* Explore the contents under `DA_Samples/Theme_MS_MultistoryDungeon/`
-* Scene Location: `DA_Samples/Theme_MS_MultistoryDungeon/Scenes/Demo_DungeonArch`
+* [Download](http://coderespawn.github.io/dungeon-architect-quick-start-unity-thridparty/Builds/DungeonArchitect_Samples_Thridparty.zip) the theme files from here and extract it into your project's Asset folder
+* Explore the contents under `DungeonArchitect_Samples_Thridparty/Demos/Theme_MS_MultistoryDungeon/`
 
 
 ![Mana Station's MultiStory Dungeons Scene (Content Not included)](../assets/images/ms_01.jpg)
@@ -137,14 +152,15 @@ A theme created using Mana Stations's excellent [Multistory Dungeons](https://ww
 
 ![Theme file](../assets/images/ms_theme.png)
 
+\newpage
 
 TopDown Dungeon (MK4)
 ======================
 A theme created using ManufacturaK4's excellent [Top-Down Dungeons Mobile](https://www.assetstore.unity3d.com/en/#!/content/8000) asset pack
 
 * Import the [Top-Down Dungeons Mobile](https://www.assetstore.unity3d.com/en/#!/content/8000) asset pack into your project before opening the demo scenes
-* Explore the contents under `DA_Samples/Theme_K4TopDownDungeons/`
-* Scene Location: `DA_Samples/Theme_K4TopDownDungeons/Scenes/K4DungeonDemo`
+* [Download](http://coderespawn.github.io/dungeon-architect-quick-start-unity-thridparty/Builds/DungeonArchitect_Samples_Thridparty.zip) the theme files from here and extract it into your project's Asset folder
+* Explore the contents under `DungeonArchitect_Samples_Thridparty/Demos/Theme_K4_TopDownDungeons/`
 
 
 ![ManufacturaK4's Top-Down Dungeons Scene (Content Not included)](../assets/images/tdd_01.jpg)
