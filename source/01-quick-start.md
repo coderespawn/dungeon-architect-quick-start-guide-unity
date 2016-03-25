@@ -318,6 +318,31 @@ A theme created using ManufacturaK4's excellent [Top-Down Dungeons Mobile](https
 
 ![Theme file](../assets/images/tdd_theme.png)
 
+Isaac Builder
+=============
+This sample demos the new Isaac builder that creates levels like the ones found in Binding of Isaac
+
+The awesome art from Daniel was used for the 2D sprites: [2D Hand Painted - Dungeon Tileset](https://www.assetstore.unity3d.com/en/#!/content/42935)
+
+* Download the samples from [here](https://s3-us-west-2.amazonaws.com/coderespawn-public/dungeon_architect/unity/third_party_samples/1.2.0/DemoBuilder_Isaac_HandPaint.zip)
+* Import the asset [2D Hand Painted - Dungeon Tileset](https://www.assetstore.unity3d.com/en/#!/content/42935)
+
+
+Scene File: `DemoIsaac`
+
+![Isaac Builder (Content Not included)](../assets/images/isaac_01.jpg)
+
+![Isaac Builder (Content Not included)](../assets/images/isaac_02.jpg)
+
+
+There is also a theme for the grid builder
+
+Scene File: `DemoGrid`
+
+![Isaac Builder (Content Not included)](../assets/images/isaac_grid_01.jpg)
+
+![Isaac Builder (Content Not included)](../assets/images/isaac_grid_02.jpg)
+
 
 Simple Shapes Theme
 ===================
