@@ -1,0 +1,600 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="for Unity 5" />
+  <title>Dungeon Architect Quick Start Demos</title>
+  <style type="text/css">code{white-space: pre;}</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../theme/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../theme/css/theme.css">
+  
+    <script src="../theme/js/jquery.min.js"></script>
+    <script src="../theme/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<script>
+
+function getPdfUrl() {
+	return "../pdf/quick_start_1.4.0.pdf";
+}
+
+</script>
+
+  <link rel="stylesheet" href="../theme/highlight/styles/tomorrow.css">
+  <script src="../theme/highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+ $(document).ready(function () {
+	 $("#TOC").prependTo("#toc_host");
+	 $("#TOC").attr("data-spy", "affix");
+	 $("#TOC").attr("data-offset-top", "5");
+	$("#TOC").addClass("bs-sidebar");
+	$("#TOC").addClass("hidden-print");
+	
+	 $("#download_pdf").appendTo("#TOC");
+	
+	 /*
+	*/
+        var url = window.location.href;
+        url = url.replace(window.location.hash, "");
+
+	    // Will only work if string in href matches with location
+        $('ul.nav a[href="' + url + '"]').parent().addClass('active');
+
+    // Will also work for relative and absolute hrefs
+        $('ul.nav a').filter(function () {
+            return this.href == url;
+        }).parent().addClass('active').parent().parent().addClass('active');
+
+    });
+
+// Smooth scroll
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 500);
+        return false;
+      }
+    }
+  });
+});
+
+</script>
+
+<script>
+
+
+$( document ).ready(function() {
+
+	$('img.svg').each(function(){
+		var $img = jQuery(this);
+		var imgID = $img.attr('id');
+		var imgClass = $img.attr('class');
+		var imgURL = $img.attr('src');
+
+		jQuery.get(imgURL, function(data) {
+                // Get the SVG tag, ignore the rest
+                var $svg = jQuery(data).find('svg');
+
+                // Add replaced image's ID to the new SVG
+                if(typeof imgID !== 'undefined') {
+                	$svg = $svg.attr('id', imgID);
+                }
+                // Add replaced image's classes to the new SVG
+                if(typeof imgClass !== 'undefined') {
+                	$svg = $svg.attr('class', imgClass+' replaced-svg');
+                }
+
+                // Remove any invalid XML tags as per http://validator.w3.org
+                $svg = $svg.removeAttr('xmlns:a');
+
+                // Replace image with new SVG
+                $img.replaceWith($svg);
+
+            }, 'xml');
+
+	});
+});
+ </script>
+
+<div id="wrap">
+
+  	<div class="container">
+<script>
+$(document).ready(function() {
+	$('#TOC ul').each(function() {
+		$(this).addClass("nav");
+
+	});
+
+	$('#TOC').children('ul').each(function() {
+		$(this).addClass("bs-sidenav");
+	});
+
+  $('a[href="#TOC"]').each(function() {
+    $(this).after($(this).text());
+    $(this).remove();
+  })
+
+
+	$('.documentationBlock img').each(function() {
+
+		$(this).addClass("width: 100%");
+		$(this).addClass("height:100%");
+		$(this).addClass('img-responsive');
+
+	});
+	$('body').scrollspy({ target: '#TOC' })
+
+	$('img').on('load', function(e) {
+    	$('body').scrollspy('refresh');
+    });
+
+});
+
+</script>
+
+<div class="row documentationBlock">
+		<div class="col-md-3" id="toc_host">
+			<div id="download_pdf"><a href="javascript:document.location.href=getPdfUrl();" target="_blank"><i class="fa fa-file-pdf-o"></i> Download PDF</a></div>
+		</div>
+		<div class="col-md-9" style="font-family: 'Open Sans', sans-serif;">
+<div class="branding-logo">
+	<img src="../assets/images/unity_logo.png">
+</div>
+			<div class="version-block">
+			  <div class="dropdown" style="display: inline">
+			    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Version
+			    <span class="caret"></span></button>
+			    <ul class="dropdown-menu">
+			    				<li><a href="quick_start_1.4.0.html">1.4.0</a></li>
+				<li><a href="quick_start_1.1.0.html">1.1.0</a></li>
+				<li><a href="quick_start_1.0.0.html">1.0.0</a></li>
+			    </ul>
+			  </div>
+			  <div class="version-number">1.4.0</div>
+			</div>
+<div id="header">
+<h1 class="title">Dungeon Architect Quick Start Demos</h1>
+<h2 class="author">for Unity 5</h2>
+</div>
+<div id="TOC">
+<ul>
+<li><a href="#sample-content">Sample Content</a></li>
+<li><a href="#candy-theme">Candy Theme</a><ul>
+<li><a href="#design-time-generation">Design Time Generation</a></li>
+<li><a href="#runtime-generation">Runtime Generation</a></li>
+</ul></li>
+<li><a href="#outdoor-cliff-theme">Outdoor Cliff Theme</a><ul>
+<li><a href="#cliffs">Cliffs</a></li>
+<li><a href="#alternate-version">Alternate Version</a></li>
+</ul></li>
+<li><a href="#simple-city-builder-demo">Simple City Builder Demo</a><ul>
+<li><a href="#city-theme-1">City Theme #1</a></li>
+<li><a href="#city-theme-2">City Theme #2</a></li>
+<li><a href="#stronghold-theme-1">Stronghold Theme #1</a></li>
+<li><a href="#stronghold-theme-2">Stronghold Theme #2</a></li>
+</ul></li>
+<li><a href="#moba-theme-mk4">MOBA Theme (MK4)</a><ul>
+<li><a href="#summer-mode">Summer Mode</a></li>
+<li><a href="#winter-mode">Winter Mode</a></li>
+</ul></li>
+<li><a href="#graveyard-theme-manufacturak4">Graveyard Theme (ManufacturaK4)</a></li>
+<li><a href="#desert-theme-manufacturak4">Desert Theme (ManufacturaK4)</a></li>
+<li><a href="#cartoon-town-theme-manufacturak4">Cartoon Town Theme (ManufacturaK4)</a></li>
+<li><a href="#village-interiors-3dforge">Village Interiors (3DForge)</a></li>
+<li><a href="#village-exteriors-3df-and-gaia-adam">Village Exteriors (3DF) and Gaia (Adam)</a><ul>
+<li><a href="#simple-village-theme">Simple Village Theme</a></li>
+<li><a href="#farm-house-theme">Farm House Theme</a></li>
+<li><a href="#stronghold-theme">Stronghold Theme</a></li>
+</ul></li>
+<li><a href="#interiors-theme-mk4">Interiors Theme (MK4)</a><ul>
+<li><a href="#wooden-theme">Wooden Theme</a></li>
+<li><a href="#stone-theme">Stone Theme</a></li>
+<li><a href="#mixed-theme">Mixed Theme</a></li>
+</ul></li>
+<li><a href="#tad-sewer-3dforge">TaD Sewer (3DForge)</a></li>
+<li><a href="#multistory-dungeon-ms">MultiStory Dungeon (MS)</a></li>
+<li><a href="#topdown-dungeon-mk4">TopDown Dungeon (MK4)</a></li>
+<li><a href="#isaac-builder">Isaac Builder</a></li>
+<li><a href="#simple-shapes-theme">Simple Shapes Theme</a></li>
+</ul>
+</div>
+<h1 id="sample-content">Sample Content</h1>
+<p>Dungeon Architect comes with sample content to quickly get you started. It contain free modular assets (Candy) and pre-designed theme files for some of the famous modular assets in the asset store</p>
+<p><strong>Sample content using free assets:</strong> Already included in DA package under DungeonArchitect_Samples folder</p>
+<p><strong>Sample content using other paid assets in the Asset Store:</strong> <a href="https://s3-us-west-2.amazonaws.com/coderespawn-public/dungeon_architect/unity/third_party_samples/1.4.0/DungeonArchitect_Samples_Thirdparty_v1.4.0.zip">DOWNLOAD</a></p>
+<h1 id="candy-theme">Candy Theme</h1>
+<p>Dungeon Architect ships with a set of free modular assets to help you get started.</p>
+<div class="figure">
+<img src="../assets/images/candy_01.jpg" alt="Level generated using the Candy Theme" />
+<p class="caption">Level generated using the Candy Theme</p>
+</div>
+<p>Explore the contents under <code>DungeonArchitect_Samples/Theme_Candy/</code></p>
+<p>The theme file used to generate the level is located here:</p>
+<p><code>DungeonArchitect_Samples/Theme_Candy/Themes/CandyDungeonTheme.asset</code></p>
+<div class="figure">
+<img src="../assets/images/candy_theme.png" alt="Free Candy Theme" />
+<p class="caption">Free Candy Theme</p>
+</div>
+<h2 id="design-time-generation">Design Time Generation</h2>
+<p>This scene has a dungeon actor setup with the Candy theme.</p>
+<p>Select the DungeonGrid actor and click “Build Dungeon” button. Change the <strong>Seed</strong> variable in the configuration to get a different layout</p>
+<p>Scene Location: <code>DungeonArchitect_Samples/Theme_Candy/Scenes/DemoScene</code></p>
+
+<h2 id="runtime-generation">Runtime Generation</h2>
+<p>This demo shows how you can build a new layout at runtime. Play the scene and use the following controls</p>
+<ul>
+<li><strong>Space</strong>: Build a new dungeon layout</li>
+<li><strong>Right Mouse</strong>: Look Around</li>
+<li><strong>WASD</strong>: Move the camera</li>
+</ul>
+<p>Scene Location: <code>DungeonArchitect_Samples/Demo_Theme_Candy/Scenes/*</code></p>
+
+<h1 id="outdoor-cliff-theme">Outdoor Cliff Theme</h1>
+<p>This demo showcases an outdoor scene using free assets by <a href="http://opengameart.org/content/3d-nature-pack">Kenny</a></p>
+<p>The art is licensed under CC0 so it can be used with your commercial games</p>
+<p><iframe width="853" height="480" src="https://www.youtube.com/embed/jilMwhXIydA?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></p>
+<h2 id="cliffs">Cliffs</h2>
+<p>Scene Location: <code>DungeonArchitect_Samples/Demo_Theme_OutdoorCliffs/Scenes/Demo_OutdoorCliffs</code></p>
+<div class="figure">
+<img src="../assets/images/cliff_01.jpg" alt="Cliff Theme" />
+<p class="caption">Cliff Theme</p>
+</div>
+<h2 id="alternate-version">Alternate Version</h2>
+<p>An alternate version of the theme Scene Location: <code>DungeonArchitect_Samples/Demo_Theme_OutdoorCliffs/Scenes/Demo_OutdoorCliffs_Alternate</code></p>
+<div class="figure">
+<img src="../assets/images/cliff_02.jpg" alt="Cliff Theme" />
+<p class="caption">Cliff Theme</p>
+</div>
+
+<h1 id="simple-city-builder-demo">Simple City Builder Demo</h1>
+<p>This example shows how you can build your own layout algorithms and swap the existing one out. A simple city layout is made in a grid based pattern and various theme files are used to decorate it</p>
+<p>Explore the contents under <code>DungeonArchitect_Samples/DemoBuilder_SimpleCity/</code></p>
+<p>The Sample Builder code resides under <code>DungeonArchitect/Scripts/Builder/SimpleCity</code></p>
+<h2 id="city-theme-1">City Theme #1</h2>
+<p>Scene Location: <code>DungeonArchitect_Samples/DemoBuilder_SimpleCity/Scenes/SimpleCityRealtimeScene</code></p>
+<div class="figure">
+<img src="../assets/images/simple_city_01.jpg" alt="Simple City Theme 1" />
+<p class="caption">Simple City Theme 1</p>
+</div>
+<h2 id="city-theme-2">City Theme #2</h2>
+<p>Scene Location: <code>DungeonArchitect_Samples/DemoBuilder_SimpleCity/Scenes/SimpleCityScene</code></p>
+<div class="figure">
+<img src="../assets/images/simple_city_02.jpg" alt="Simple City Theme 2" />
+<p class="caption">Simple City Theme 2</p>
+</div>
+<h2 id="stronghold-theme-1">Stronghold Theme #1</h2>
+<p>A marker emitter is attached to the builder to extend it by emitting wall markers around the city bounds. This lets the theme files deocrate the level as a medieval stronghold</p>
+<p>Scene Location: <code>DungeonArchitect_Samples/DemoBuilder_SimpleCity/Scenes/StrongholdBasic</code></p>
+<div class="figure">
+<img src="../assets/images/stronghold_01.jpg" alt="Stronghold Theme 1" />
+<p class="caption">Stronghold Theme 1</p>
+</div>
+<h2 id="stronghold-theme-2">Stronghold Theme #2</h2>
+<p>An alternative version of the above theme</p>
+<p>Scene Location: <code>DungeonArchitect_Samples/DemoBuilder_SimpleCity/Scenes/StrongholdMedieval</code></p>
+<p>The art assets is licensed under CC0 and can be used with commercial games</p>
+<div class="figure">
+<img src="../assets/images/stronghold_02.jpg" alt="Stronghold Theme 2" />
+<p class="caption">Stronghold Theme 2</p>
+</div>
+
+<h1 id="moba-theme-mk4">MOBA Theme (MK4)</h1>
+<p>A theme created using ManufacturaK4’s excellent <a href="https://www.assetstore.unity3d.com/en/#!/content/28234">Tower Defense and MOBA</a> asset pack</p>
+<ul>
+<li>Import the <a href="https://www.assetstore.unity3d.com/en/#!/content/28234">Tower Defense and MOBA</a> asset pack into your project before opening the demo scenes</li>
+<li><a href="#sample-content">Download</a> the theme files from here and extract it into your project’s Asset folder</li>
+<li>Explore the contents under <code>DungeonArchitect_Samples_Thridparty/Demos/Theme_K4_Moba/</code></li>
+</ul>
+<h2 id="summer-mode">Summer Mode</h2>
+<p>Scene Location: <code>DungeonArchitect_Samples_Thridparty/Demos/Theme_K4_Moba/Scenes/Demo_MOBA_DA_Summer</code></p>
+<div class="figure">
+<img src="../assets/images/moba_01.jpg" alt="ManufacturaK4’s Moba Scene (Content Not included)" />
+<p class="caption">ManufacturaK4’s Moba Scene (Content Not included)</p>
+</div>
+<div class="figure">
+<img src="../assets/images/moba_02.jpg" alt="ManufacturaK4’s Moba Scene (Content Not included)" />
+<p class="caption">ManufacturaK4’s Moba Scene (Content Not included)</p>
+</div>
+<div class="figure">
+<img src="../assets/images/moba_03.jpg" alt="ManufacturaK4’s Moba Scene (Content Not included)" />
+<p class="caption">ManufacturaK4’s Moba Scene (Content Not included)</p>
+</div>
+<div class="figure">
+<img src="../assets/images/moba_theme.png" alt="Theme File Fragment" />
+<p class="caption">Theme File Fragment</p>
+</div>
+<h2 id="winter-mode">Winter Mode</h2>
+<p>The assets come with winter textures as well (however it doesn’t come with winter materials and an easy way to switch between the two). With DA you can do that easily</p>
+<p>Scene Location: <code>DungeonArchitect_Samples_Thridparty/Demos/Theme_K4_Moba/Scenes/Demo_MOBA_DA_Winter</code></p>
+<p>After the scene is generated, a dungeon listener script automatically fires that replaces the summer materials with winter ones. This script is reusable on your other projects</p>
+<div class="figure">
+<img src="../assets/images/moba_winter_01.jpg" alt="ManufacturaK4’s Moba Winter Scene (Content Not included)" />
+<p class="caption">ManufacturaK4’s Moba Winter Scene (Content Not included)</p>
+</div>
+<div class="figure">
+<img src="../assets/images/moba_winter_02.jpg" alt="ManufacturaK4’s Moba Winter Scene (Content Not included)" />
+<p class="caption">ManufacturaK4’s Moba Winter Scene (Content Not included)</p>
+</div>
+
+<h1 id="graveyard-theme-manufacturak4">Graveyard Theme (ManufacturaK4)</h1>
+<p>A theme created using the city builder and ManufacturaK4’s excellent <a href="https://www.assetstore.unity3d.com/en/#!/content/25356">Top-Down Graveyard</a> asset pack</p>
+<p><iframe width="853" height="480" src="https://www.youtube.com/embed/CJLk6VsFxfY?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></p>
+<div class="figure">
+<img src="../assets/images/grave1.jpg" alt="Graveyard Scene (Content Not included)" />
+<p class="caption">Graveyard Scene (Content Not included)</p>
+</div>
+<div class="figure">
+<img src="../assets/images/grave2.jpg" alt="Graveyard Scene (Content Not included)" />
+<p class="caption">Graveyard Scene (Content Not included)</p>
+</div>
+<ul>
+<li>Import the <a href="https://www.assetstore.unity3d.com/en/#!/content/25356">Top-Down Graveyard</a> asset pack into your project</li>
+<li><a href="#sample-content">Download</a> the theme files from here and extract it into your project’s Asset folder</li>
+<li>Explore the contents under <code>DungeonArchitect_Samples_Thridparty/Demos/Theme_K4_Graveyard/</code></li>
+</ul>
+<h1 id="desert-theme-manufacturak4">Desert Theme (ManufacturaK4)</h1>
+<p>A theme created using the city builder and ManufacturaK4’s <a href="https://www.assetstore.unity3d.com/en/#!/content/44757">Top-Down Desert</a> asset pack</p>
+<p><iframe width="853" height="480" src="https://www.youtube.com/embed/s15dYrR213M?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></p>
+<div class="figure">
+<img src="../assets/images/desert1.jpg" alt="Desert Scene (Content Not included)" />
+<p class="caption">Desert Scene (Content Not included)</p>
+</div>
+<div class="figure">
+<img src="../assets/images/desert2.jpg" alt="Desert Scene (Content Not included)" />
+<p class="caption">Desert Scene (Content Not included)</p>
+</div>
+<ul>
+<li>Import the <a href="https://www.assetstore.unity3d.com/en/#!/content/44757">Top-Down Desert</a> asset pack into your project</li>
+<li><a href="#sample-content">Download</a> the theme files from here and extract it into your project’s Asset folder</li>
+<li>Explore the contents under <code>DungeonArchitect_Samples_Thridparty/Demos/Theme_K4_Desert/</code></li>
+</ul>
+<h1 id="cartoon-town-theme-manufacturak4">Cartoon Town Theme (ManufacturaK4)</h1>
+<p>A theme created using the city builder and ManufacturaK4’s <a href="https://www.assetstore.unity3d.com/en/#!/content/17254">Cartoon Town and Farm</a> asset pack</p>
+<p><iframe width="853" height="480" src="https://www.youtube.com/embed/NlqHnM1KG0g?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></p>
+<div class="figure">
+<img src="../assets/images/toon_city1.jpg" alt="Toon City Scene (Content Not included)" />
+<p class="caption">Toon City Scene (Content Not included)</p>
+</div>
+<ul>
+<li>Import the <a href="https://www.assetstore.unity3d.com/en/#!/content/17254">Cartoon Town and Farm</a> asset pack into your project</li>
+<li><a href="#sample-content">Download</a> the theme files from here and extract it into your project’s Asset folder</li>
+<li>Explore the contents under <code>DungeonArchitect_Samples_Thridparty/Demos/Theme_K4_CartoonTown/</code></li>
+</ul>
+<h1 id="village-interiors-3dforge">Village Interiors (3DForge)</h1>
+<p>A theme created using 3DForge’s awesome <a href="https://www.assetstore.unity3d.com/en/#!/content/17033">Village Interior Kit</a> asset pack</p>
+<p><iframe width="853" height="480" src="https://www.youtube.com/embed/-XEp_8kI-Us?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></p>
+<ul>
+<li>Import the <a href="https://www.assetstore.unity3d.com/en/#!/content/17033">Village Interior Kit</a> asset pack into your project before opening the demo scenes</li>
+<li><a href="#sample-content">Download</a> the theme files from here and extract it into your project’s Asset folder</li>
+<li>Explore the contents under <code>DungeonArchitect_Samples_Thridparty/Demos/Theme_3DF_VillageInterior/</code></li>
+</ul>
+<div class="figure">
+<img src="../assets/images/village_interior_01.jpg" alt="Village Interior Kit Theme (Content Not included)" />
+<p class="caption">Village Interior Kit Theme (Content Not included)</p>
+</div>
+<div class="figure">
+<img src="../assets/images/village_interior_02.jpg" alt="Village Interior Kit Theme (Content Not included)" />
+<p class="caption">Village Interior Kit Theme (Content Not included)</p>
+</div>
+<div class="figure">
+<img src="../assets/images/village_interior_03.jpg" alt="Village Interior Kit Theme (Content Not included)" />
+<p class="caption">Village Interior Kit Theme (Content Not included)</p>
+</div>
+
+<h1 id="village-exteriors-3df-and-gaia-adam">Village Exteriors (3DF) and Gaia (Adam)</h1>
+<p>A theme created using 3DForge’s awesome <a href="https://www.assetstore.unity3d.com/en/#!/content/38045">Village Exterior Kit</a> asset pack and placed on a terrain generated using Adam’s beautiful <a href="https://www.assetstore.unity3d.com/en/#!/content/42618">Gaia</a> terrain generator</p>
+<ul>
+<li>Import the <a href="https://www.assetstore.unity3d.com/en/#!/content/38045">Village Exterior Kit</a> asset pack into your project before opening the demo scenes</li>
+<li>Import <a href="https://www.assetstore.unity3d.com/en/#!/content/42618">Gaia</a> asset pack into your project before opening the demo scenes</li>
+<li><a href="#sample-content">Download</a> the theme files from here and extract it into your project’s Asset folder</li>
+<li>Explore the contents under <code>DungeonArchitect_Samples_Thridparty/Demos/Theme_3DF_VillageExterior_Gaia/</code></li>
+</ul>
+<h2 id="simple-village-theme">Simple Village Theme</h2>
+<p><iframe width="853" height="480" src="https://www.youtube.com/embed/Dcbqy_tlIHA?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></p>
+<p>A village theme created using the default grid builder. The theme file places random houses near the layout of the dungeon, making it look like a small village</p>
+<p>Scene Location <code>DungeonArchitect_Samples_Thridparty/Demos/Theme_3DF_VillageExterior_Gaia/Scenes/SmallVillage</code></p>
+<div class="figure">
+<img src="../assets/images/gaia_village0.jpg" alt="Village theme (Content Not included)" />
+<p class="caption">Village theme (Content Not included)</p>
+</div>
+<div class="figure">
+<img src="../assets/images/gaia_village1.jpg" alt="Village theme (Content Not included)" />
+<p class="caption">Village theme (Content Not included)</p>
+</div>
+<div class="figure">
+<img src="../assets/images/gaia_village2.jpg" alt="Village theme (Content Not included)" />
+<p class="caption">Village theme (Content Not included)</p>
+</div>
+<h2 id="farm-house-theme">Farm House Theme</h2>
+<p>A grid dungeon with a house placed inside each room of the dungoen. This makes the indivial houses connected with pathways</p>
+<p>Scene Location <code>DungeonArchitect_Samples_Thridparty/Demos/Theme_3DF_VillageExterior_Gaia/Scenes/FarmHouse</code></p>
+<div class="figure">
+<img src="../assets/images/gaia_farm.jpg" alt="Farmhouse theme (Content Not included)" />
+<p class="caption">Farmhouse theme (Content Not included)</p>
+</div>
+<div class="figure">
+<img src="../assets/images/gaia_farm2.jpg" alt="Farmhouse theme (Content Not included)" />
+<p class="caption">Farmhouse theme (Content Not included)</p>
+</div>
+<h2 id="stronghold-theme">Stronghold Theme</h2>
+<p><iframe width="853" height="480" src="https://www.youtube.com/embed/CoT-e_cX5Rc?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></p>
+<p>This demo uses the city dungeon builder and a village with walls</p>
+<p>Scene Location <code>DungeonArchitect_Samples_Thridparty/Demos/Theme_3DF_VillageExterior_Gaia/Scenes/StrongholdVillage</code></p>
+<div class="figure">
+<img src="../assets/images/gaia_sh1.jpg" alt="Stronghold theme (Content Not included)" />
+<p class="caption">Stronghold theme (Content Not included)</p>
+</div>
+<div class="figure">
+<img src="../assets/images/gaia_sh2.jpg" alt="Stronghold theme (Content Not included)" />
+<p class="caption">Stronghold theme (Content Not included)</p>
+</div>
+<div class="figure">
+<img src="../assets/images/gaia_sh3.jpg" alt="Stronghold theme (Content Not included)" />
+<p class="caption">Stronghold theme (Content Not included)</p>
+</div>
+<h1 id="interiors-theme-mk4">Interiors Theme (MK4)</h1>
+<p>A theme created using ManufacturaK4’s excellent <a href="https://www.assetstore.unity3d.com/en/#!/content/18139">Top-Down Interiors</a> asset pack</p>
+<ul>
+<li>Import the <a href="https://www.assetstore.unity3d.com/en/#!/content/18139">Top-Down Interiors</a> asset pack into your project before opening the demo scenes</li>
+<li><a href="#sample-content">Download</a> the theme files from here and extract it into your project’s Asset folder</li>
+<li>Explore the contents under <code>DungeonArchitect_Samples_Thridparty/Demos/Theme_K4_Interiors/</code></li>
+</ul>
+<h2 id="wooden-theme">Wooden Theme</h2>
+<p>Scene Location: <code>DungeonArchitect_Samples_Thridparty/Demos/Theme_K4_Interiors/Scenes/01_PalaceWood</code></p>
+<div class="figure">
+<img src="../assets/images/interior_wood_01.jpg" alt="Wooden Theme (Content Not included)" />
+<p class="caption">Wooden Theme (Content Not included)</p>
+</div>
+<div class="figure">
+<img src="../assets/images/interior_wood_02.jpg" alt="Wooden Theme (Content Not included)" />
+<p class="caption">Wooden Theme (Content Not included)</p>
+</div>
+<div class="figure">
+<img src="../assets/images/interior_wood_theme.png" alt="Theme File" />
+<p class="caption">Theme File</p>
+</div>
+
+<h2 id="stone-theme">Stone Theme</h2>
+<p>Scene Location: <code>DungeonArchitect_Samples_Thridparty/Demos/Theme_K4_Interiors/Scenes/02_PalaceStone</code></p>
+<div class="figure">
+<img src="../assets/images/interior_stone_01.jpg" alt="Stone Theme (Content Not included)" />
+<p class="caption">Stone Theme (Content Not included)</p>
+</div>
+<div class="figure">
+<img src="../assets/images/interior_stone_theme.png" alt="Theme File" />
+<p class="caption">Theme File</p>
+</div>
+
+<h2 id="mixed-theme">Mixed Theme</h2>
+<p>Scene Location: <code>DungeonArchitect_Samples_Thridparty/Demos/Theme_K4_Interiors/Scenes/03_StoneWood_Mixed</code></p>
+<p>This sample shows how you can mix two different themes using a <em>Theme Override Volume</em></p>
+<div class="figure">
+<img src="../assets/images/interior_mixed_01.jpg" alt="Multiple Themes (Content Not included)" />
+<p class="caption">Multiple Themes (Content Not included)</p>
+</div>
+
+<h1 id="tad-sewer-3dforge">TaD Sewer (3DForge)</h1>
+<p>A theme created using 3DForge’s excellent <a href="https://www.assetstore.unity3d.com/en/#!/content/12867">TaD Sewer Kit</a> asset pack</p>
+<ul>
+<li>Import the <a href="https://www.assetstore.unity3d.com/en/#!/content/12867">TaD Sewer Kit</a> asset pack into your project before opening the demo scenes</li>
+<li><a href="#sample-content">Download</a> the theme files from here and extract it into your project’s Asset folder</li>
+<li>Explore the contents under <code>DungeonArchitect_Samples_Thridparty/Demos/Theme_3DF_TaDSewer/</code></li>
+</ul>
+<div class="figure">
+<img src="../assets/images/sewer_01.jpg" alt="TaD Sewer Scene (Content Not included)" />
+<p class="caption">TaD Sewer Scene (Content Not included)</p>
+</div>
+<div class="figure">
+<img src="../assets/images/sewer_02.jpg" alt="TaD Sewer Scene (Content Not included)" />
+<p class="caption">TaD Sewer Scene (Content Not included)</p>
+</div>
+<div class="figure">
+<img src="../assets/images/sewer_theme.png" alt="Theme File" />
+<p class="caption">Theme File</p>
+</div>
+
+<h1 id="multistory-dungeon-ms">MultiStory Dungeon (MS)</h1>
+<p>A theme created using Mana Stations’s excellent <a href="https://www.assetstore.unity3d.com/en/#!/content/33955">Multistory Dungeons</a> asset pack</p>
+<ul>
+<li>Import the <a href="https://www.assetstore.unity3d.com/en/#!/content/33955">Multistory Dungeons</a> asset pack into your project before opening the demo scenes</li>
+<li><a href="#sample-content">Download</a> the theme files from here and extract it into your project’s Asset folder</li>
+<li>Explore the contents under <code>DungeonArchitect_Samples_Thridparty/Demos/Theme_MS_MultistoryDungeon/</code></li>
+</ul>
+<div class="figure">
+<img src="../assets/images/ms_01.jpg" alt="Mana Station’s MultiStory Dungeons Scene (Content Not included)" />
+<p class="caption">Mana Station’s MultiStory Dungeons Scene (Content Not included)</p>
+</div>
+<div class="figure">
+<img src="../assets/images/ms_02.jpg" alt="Mana Station’s MultiStory Dungeons Scene (Content Not included)" />
+<p class="caption">Mana Station’s MultiStory Dungeons Scene (Content Not included)</p>
+</div>
+<div class="figure">
+<img src="../assets/images/ms_03.jpg" alt="Mana Station’s MultiStory Dungeons Scene (Content Not included)" />
+<p class="caption">Mana Station’s MultiStory Dungeons Scene (Content Not included)</p>
+</div>
+<div class="figure">
+<img src="../assets/images/ms_theme.png" alt="Theme file" />
+<p class="caption">Theme file</p>
+</div>
+
+<h1 id="topdown-dungeon-mk4">TopDown Dungeon (MK4)</h1>
+<p>A theme created using ManufacturaK4’s excellent <a href="https://www.assetstore.unity3d.com/en/#!/content/8000">Top-Down Dungeons Mobile</a> asset pack</p>
+<ul>
+<li>Import the <a href="https://www.assetstore.unity3d.com/en/#!/content/8000">Top-Down Dungeons Mobile</a> asset pack into your project before opening the demo scenes</li>
+<li><a href="#sample-content">Download</a> the theme files from here and extract it into your project’s Asset folder</li>
+<li>Explore the contents under <code>DungeonArchitect_Samples_Thridparty/Demos/Theme_K4_TopDownDungeons/</code></li>
+</ul>
+<div class="figure">
+<img src="../assets/images/tdd_01.jpg" alt="ManufacturaK4’s Top-Down Dungeons Scene (Content Not included)" />
+<p class="caption">ManufacturaK4’s Top-Down Dungeons Scene (Content Not included)</p>
+</div>
+<div class="figure">
+<img src="../assets/images/tdd_02.jpg" alt="ManufacturaK4’s Top-Down Dungeons Scene (Content Not included)" />
+<p class="caption">ManufacturaK4’s Top-Down Dungeons Scene (Content Not included)</p>
+</div>
+<div class="figure">
+<img src="../assets/images/tdd_theme.png" alt="Theme file" />
+<p class="caption">Theme file</p>
+</div>
+<h1 id="isaac-builder">Isaac Builder</h1>
+<p>This sample demos the new Isaac builder that creates levels like the ones found in Binding of Isaac</p>
+<p>The awesome art from Daniel was used for the 2D sprites: <a href="https://www.assetstore.unity3d.com/en/#!/content/42935">2D Hand Painted - Dungeon Tileset</a></p>
+<ul>
+<li>Download the samples from <a href="https://s3-us-west-2.amazonaws.com/coderespawn-public/dungeon_architect/unity/third_party_samples/1.2.0/DemoBuilder_Isaac_HandPaint.zip">here</a></li>
+<li>Import the asset <a href="https://www.assetstore.unity3d.com/en/#!/content/42935">2D Hand Painted - Dungeon Tileset</a></li>
+</ul>
+<p>Scene File: <code>DemoIsaac</code></p>
+<div class="figure">
+<img src="../assets/images/isaac_01.jpg" alt="Isaac Builder (Content Not included)" />
+<p class="caption">Isaac Builder (Content Not included)</p>
+</div>
+<div class="figure">
+<img src="../assets/images/isaac_02.jpg" alt="Isaac Builder (Content Not included)" />
+<p class="caption">Isaac Builder (Content Not included)</p>
+</div>
+<p>There is also a theme for the grid builder</p>
+<p>Scene File: <code>DemoGrid</code></p>
+<div class="figure">
+<img src="../assets/images/isaac_grid_01.jpg" alt="Isaac Builder (Content Not included)" />
+<p class="caption">Isaac Builder (Content Not included)</p>
+</div>
+<div class="figure">
+<img src="../assets/images/isaac_grid_02.jpg" alt="Isaac Builder (Content Not included)" />
+<p class="caption">Isaac Builder (Content Not included)</p>
+</div>
+<h1 id="simple-shapes-theme">Simple Shapes Theme</h1>
+<p>Another example of a theme generated using simple basic shapes</p>
+<p>Explore the contents under <code>DungeonArchitect_Samples/Theme_SimpleShapes/</code></p>
+<p>Scene Location: <code>DungeonArchitect_Samples/Theme_SimpleShapes/Scenes/BasicShapesDemo</code></p>
+<div class="figure">
+<img src="../assets/images/simple_shapes_01.jpg" alt="Simple Shapes Scene" />
+<p class="caption">Simple Shapes Scene</p>
+</div>
+<div class="figure">
+<img src="../assets/images/simple_shapes_01_theme.png" alt="Theme File" />
+<p class="caption">Theme File</p>
+</div>
+<div id="footer">
+  &copy; 2015 <a href="http://coderespawn.com/">Code Respawn Technologies Pvt Ltd</a>
+</div>
+
+</div>
+
+</div>
+</body>
+</html>
