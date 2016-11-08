@@ -7,7 +7,7 @@ Dungeon Architect comes with sample content to quickly get you started.    It co
 
 **Sample content using free assets:**  Already included in DA package under DungeonArchitect_Samples folder
 
-**Sample content using other paid assets in the Asset Store:**  [DOWNLOAD](https://s3-us-west-2.amazonaws.com/coderespawn-public/dungeon_architect/unity/third_party_samples/1.1.0/DungeonArchitect_Samples_Thirdparty_v1.1.0.zip)
+**Sample content using other paid assets in the Asset Store:**  [DOWNLOAD](https://s3-us-west-2.amazonaws.com/coderespawn-public/dungeon_architect/unity/third_party_samples/1.4.0/DungeonArchitect_Samples_Thirdparty_v1.4.0.zip)
 
 Candy Theme
 ===========
@@ -121,7 +121,7 @@ MOBA Theme (MK4)
 A theme created using ManufacturaK4's excellent [Tower Defense and MOBA](https://www.assetstore.unity3d.com/en/#!/content/28234) asset pack
 
 * Import the [Tower Defense and MOBA](https://www.assetstore.unity3d.com/en/#!/content/28234) asset pack into your project before opening the demo scenes
-* [Download](https://s3-us-west-2.amazonaws.com/coderespawn-public/dungeon_architect/unity/third_party_samples/1.1.0/DungeonArchitect_Samples_Thirdparty_v1.1.0.zip) the theme files from here and extract it into your project's Asset folder
+* [Download](#sample-content) the theme files from here and extract it into your project's Asset folder
 * Explore the contents under `DungeonArchitect_Samples_Thridparty/Demos/Theme_K4_Moba/`
 
 Summer Mode
@@ -153,6 +153,47 @@ After the scene is generated,  a dungeon listener script automatically fires tha
 
 \newpage
 
+Graveyard Theme (ManufacturaK4)
+================
+A theme created using the city builder and ManufacturaK4's excellent [Top-Down Graveyard](https://www.assetstore.unity3d.com/en/#!/content/25356) asset pack
+
+YOUTUBE(CJLk6VsFxfY)
+
+![Graveyard Scene (Content Not included)](../assets/images/grave1.jpg)
+
+![Graveyard Scene (Content Not included)](../assets/images/grave2.jpg)
+
+* Import the [Top-Down Graveyard](https://www.assetstore.unity3d.com/en/#!/content/25356) asset pack into your project
+* [Download](#sample-content) the theme files from here and extract it into your project's Asset folder
+* Explore the contents under `DungeonArchitect_Samples_Thridparty/Demos/Theme_K4_Graveyard/`
+
+Desert Theme (ManufacturaK4)
+================
+A theme created using the city builder and ManufacturaK4's [Top-Down Desert](https://www.assetstore.unity3d.com/en/#!/content/44757) asset pack
+
+YOUTUBE(s15dYrR213M)
+
+![Desert Scene (Content Not included)](../assets/images/desert1.jpg)
+
+![Desert Scene (Content Not included)](../assets/images/desert2.jpg)
+
+* Import the [Top-Down Desert](https://www.assetstore.unity3d.com/en/#!/content/44757) asset pack into your project
+* [Download](#sample-content) the theme files from here and extract it into your project's Asset folder
+* Explore the contents under `DungeonArchitect_Samples_Thridparty/Demos/Theme_K4_Desert/`
+
+
+Cartoon Town Theme (ManufacturaK4)
+================
+A theme created using the city builder and ManufacturaK4's [Cartoon Town and Farm](https://www.assetstore.unity3d.com/en/#!/content/17254) asset pack
+
+YOUTUBE(NlqHnM1KG0g)
+
+![Toon City Scene (Content Not included)](../assets/images/toon_city1.jpg)
+
+* Import the [Cartoon Town and Farm](https://www.assetstore.unity3d.com/en/#!/content/17254) asset pack into your project
+* [Download](#sample-content) the theme files from here and extract it into your project's Asset folder
+* Explore the contents under `DungeonArchitect_Samples_Thridparty/Demos/Theme_K4_CartoonTown/`
+
 
 Village Interiors (3DForge)
 ================
@@ -161,7 +202,7 @@ A theme created using 3DForge's awesome [Village Interior Kit](https://www.asset
 YOUTUBE(-XEp_8kI-Us)
 
 * Import the [Village Interior Kit](https://www.assetstore.unity3d.com/en/#!/content/17033) asset pack into your project before opening the demo scenes
-* [Download](https://s3-us-west-2.amazonaws.com/coderespawn-public/dungeon_architect/unity/third_party_samples/1.1.0/DungeonArchitect_Samples_Thirdparty_v1.1.0.zip) the theme files from here and extract it into your project's Asset folder
+* [Download](#sample-content) the theme files from here and extract it into your project's Asset folder
 * Explore the contents under `DungeonArchitect_Samples_Thridparty/Demos/Theme_3DF_VillageInterior/`
 
 
@@ -180,7 +221,7 @@ A theme created using 3DForge's awesome [Village Exterior Kit](https://www.asset
 
 * Import the [Village Exterior Kit](https://www.assetstore.unity3d.com/en/#!/content/38045) asset pack into your project before opening the demo scenes
 * Import [Gaia](https://www.assetstore.unity3d.com/en/#!/content/42618) asset pack into your project before opening the demo scenes
-* [Download](https://s3-us-west-2.amazonaws.com/coderespawn-public/dungeon_architect/unity/third_party_samples/1.1.0/DungeonArchitect_Samples_Thirdparty_v1.1.0.zip) the theme files from here and extract it into your project's Asset folder
+* [Download](#sample-content) the theme files from here and extract it into your project's Asset folder
 * Explore the contents under `DungeonArchitect_Samples_Thridparty/Demos/Theme_3DF_VillageExterior_Gaia/`
 
 
@@ -232,7 +273,7 @@ Interiors Theme (MK4)
 A theme created using ManufacturaK4's excellent [Top-Down Interiors](https://www.assetstore.unity3d.com/en/#!/content/18139) asset pack
 
 * Import the [Top-Down Interiors](https://www.assetstore.unity3d.com/en/#!/content/18139) asset pack into your project before opening the demo scenes
-* [Download](https://s3-us-west-2.amazonaws.com/coderespawn-public/dungeon_architect/unity/third_party_samples/1.1.0/DungeonArchitect_Samples_Thirdparty_v1.1.0.zip) the theme files from here and extract it into your project's Asset folder
+* [Download](#sample-content) the theme files from here and extract it into your project's Asset folder
 * Explore the contents under `DungeonArchitect_Samples_Thridparty/Demos/Theme_K4_Interiors/`
 
 Wooden Theme
@@ -272,7 +313,7 @@ TaD Sewer (3DForge)
 A theme created using 3DForge's excellent [TaD Sewer Kit](https://www.assetstore.unity3d.com/en/#!/content/12867) asset pack
 
 * Import the [TaD Sewer Kit](https://www.assetstore.unity3d.com/en/#!/content/12867) asset pack into your project before opening the demo scenes
-* [Download](https://s3-us-west-2.amazonaws.com/coderespawn-public/dungeon_architect/unity/third_party_samples/1.1.0/DungeonArchitect_Samples_Thirdparty_v1.1.0.zip) the theme files from here and extract it into your project's Asset folder
+* [Download](#sample-content) the theme files from here and extract it into your project's Asset folder
 * Explore the contents under `DungeonArchitect_Samples_Thridparty/Demos/Theme_3DF_TaDSewer/`
 
 
@@ -289,7 +330,7 @@ MultiStory Dungeon (MS)
 A theme created using Mana Stations's excellent [Multistory Dungeons](https://www.assetstore.unity3d.com/en/#!/content/33955) asset pack
 
 * Import the [Multistory Dungeons](https://www.assetstore.unity3d.com/en/#!/content/33955) asset pack into your project before opening the demo scenes
-* [Download](https://s3-us-west-2.amazonaws.com/coderespawn-public/dungeon_architect/unity/third_party_samples/1.1.0/DungeonArchitect_Samples_Thirdparty_v1.1.0.zip) the theme files from here and extract it into your project's Asset folder
+* [Download](#sample-content) the theme files from here and extract it into your project's Asset folder
 * Explore the contents under `DungeonArchitect_Samples_Thridparty/Demos/Theme_MS_MultistoryDungeon/`
 
 
@@ -308,7 +349,7 @@ TopDown Dungeon (MK4)
 A theme created using ManufacturaK4's excellent [Top-Down Dungeons Mobile](https://www.assetstore.unity3d.com/en/#!/content/8000) asset pack
 
 * Import the [Top-Down Dungeons Mobile](https://www.assetstore.unity3d.com/en/#!/content/8000) asset pack into your project before opening the demo scenes
-* [Download](https://s3-us-west-2.amazonaws.com/coderespawn-public/dungeon_architect/unity/third_party_samples/1.1.0/DungeonArchitect_Samples_Thirdparty_v1.1.0.zip) the theme files from here and extract it into your project's Asset folder
+* [Download](#sample-content) the theme files from here and extract it into your project's Asset folder
 * Explore the contents under `DungeonArchitect_Samples_Thridparty/Demos/Theme_K4_TopDownDungeons/`
 
 
