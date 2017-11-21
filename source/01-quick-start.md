@@ -1,5 +1,5 @@
 % Dungeon Architect Quick Start Demos
-% for Unity 5
+% for Unity
 
 Sample Content
 ==============
@@ -7,7 +7,7 @@ Dungeon Architect comes with sample content to quickly get you started.    It co
 
 **Sample content using free assets:**  Already included in DA package under DungeonArchitect_Samples folder
 
-**Sample content using other paid assets in the Asset Store:**  [DOWNLOAD](https://s3-us-west-2.amazonaws.com/coderespawn-public/dungeon_architect/unity/third_party_samples/1.4.0/DungeonArchitect_Samples_Thirdparty_v1.4.0.zip)
+**Sample content using other paid assets in the Asset Store:**  [DOWNLOAD](https://s3-us-west-2.amazonaws.com/coderespawn-public/dungeon_architect/unity/third_party_samples/1.6.0/DungeonArchitect_Samples_Thridparty_v1.6.0.zip)
 
 Candy Theme
 ===========
